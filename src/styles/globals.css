@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-base: #080c14;
+  --bg-card: #0d1423;
+  --cyan: #00e5ff;
+  --green: #00e676;
+  --red: #ff1744;
+  --text-primary: #e8f0fe;
+  --text-secondary: #8899bb;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: #0d1423; }
+::-webkit-scrollbar-thumb { background: #1e2a3a; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #00e5ff44; }
+::selection { background: rgba(0,229,255,0.2); color: #00e5ff; }
+
+@layer components {
+  .card { @apply bg-bg-card border border-bg-border rounded-xl p-4 md:p-5; }
+  .card-hover { @apply card transition-all duration-200 hover:border-cyan/30 hover:shadow-glow-sm cursor-pointer; }
+
+  .btn-primary {
+    @apply bg-cyan text-bg-base font-semibold rounded-lg px-4 py-2.5 text-sm
+           hover:bg-cyan-dim transition-colors duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed
+           active:scale-95 touch-manipulation;
+  }
+  .btn-secondary {
+    @apply border border-cyan/40 text-cyan rounded-lg px-4 py-2.5 text-sm
+           hover:bg-cyan/10 transition-colors duration-200
+           active:scale-95 touch-manipulation;
+  }
+  .btn-danger {
+    @apply bg-red-loss/10 border border-red-loss/30 text-red-loss rounded-lg px-4 py-2.5 text-sm
+           hover:bg-red-loss/20 transition-colors duration-200 active:scale-95;
+  }
+  .btn-success {
+    @apply bg-green-profit/10 border border-green-profit/30 text-green-profit rounded-lg px-4 py-2.5 text-sm
+           hover:bg-green-profit/20 transition-colors duration-200 active:scale-95;
+  }
+
+  .input {
+    @apply w-full bg-bg-elevated border border-bg-border text-text-primary rounded-lg px-4 py-3
+           text-sm focus:outline-none focus:border-cyan/60 focus:ring-1 focus:ring-cyan/20
+           transition-all duration-200 placeholder:text-text-muted;
+  }
+
+  .badge-pending  { @apply text-yellow-400 bg-yellow-400/10 border border-yellow-400/20 px-2 py-0.5 rounded text-xs; }
+  .badge-approved { @apply text-green-profit bg-green-profit/10 border border-green-profit/20 px-2 py-0.5 rounded text-xs; }
+  .badge-rejected { @apply text-red-loss bg-red-loss/10 border border-red-loss/20 px-2 py-0.5 rounded text-xs; }
+  .badge-profit   { @apply text-green-profit bg-green-profit/10 border border-green-profit/20 px-2 py-0.5 rounded text-xs font-mono; }
+  .badge-loss     { @apply text-red-loss bg-red-loss/10 border border-red-loss/20 px-2 py-0.5 rounded text-xs font-mono; }
+
+  .stat-card  { @apply card flex flex-col gap-1; }
+  .stat-label { @apply text-text-secondary text-xs md:text-sm; }
+  .stat-value { @apply text-text-primary font-display font-semibold text-xl md:text-2xl; }
+
+  /* Responsive table wrapper */
+  .table-wrap { @apply overflow-x-auto -mx-4 md:mx-0 px-4 md:px-0; }
+}
