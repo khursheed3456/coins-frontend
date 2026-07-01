@@ -21,7 +21,7 @@ export default function CoinDetailPage() {
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
 
-  useEffect(() => { init(); }, []);
+  useEffect(() => { init(); }, [init]);
   useEffect(() => { if (!isLoading && !user) router.push('/auth/login'); }, [user, isLoading]);
 
   const fetchCoin = async () => {

@@ -15,7 +15,7 @@ export default function CoinsPage() {
   const [loading, setLoading] = useState(true);
   const [histories, setHistories] = useState({});
 
-  useEffect(() => { init(); }, []);
+  useEffect(() => { init(); }, [init]);
   useEffect(() => { if (!isLoading && !user) router.push('/auth/login'); }, [user, isLoading]);
 
   useEffect(() => {

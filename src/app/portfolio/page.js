@@ -16,7 +16,7 @@ export default function PortfolioPage() {
   const [tab, setTab] = useState('holdings');
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => { init(); }, []);
+  useEffect(() => { init(); }, [init]);
   useEffect(() => { if (!isLoading && !user) router.push('/auth/login'); }, [user, isLoading]);
 
   useEffect(() => {

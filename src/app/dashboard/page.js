@@ -15,7 +15,7 @@ export default function DashboardPage() {
   const [priceHistories, setPriceHistories] = useState({});
   const [loadingData, setLoadingData] = useState(true);
 
-  useEffect(() => { init(); }, []);
+  useEffect(() => { init(); }, [init]);
   useEffect(() => { if (!isLoading && !user) router.push('/auth/login'); }, [user, isLoading]);
 
   useEffect(() => {

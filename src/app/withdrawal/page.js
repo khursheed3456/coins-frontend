@@ -27,7 +27,7 @@ export default function WithdrawalPage() {
   const [loading, setLoading] = useState(true);
   const [meData, setMeData] = useState(null);
 
-  useEffect(() => { init(); }, []);
+  useEffect(() => { init(); }, [init]);
   useEffect(() => { if (!isLoading && !user) router.push('/auth/login'); }, [user, isLoading]);
 
   const fetchData = async () => {
