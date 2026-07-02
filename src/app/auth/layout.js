@@ -8,7 +8,7 @@ export default function AuthLayout({ children }) {
           <h1 className="font-display text-2xl md:text-3xl font-bold text-cyan tracking-tight">
             COIN<span className="text-text-primary">X</span>444
           </h1>
-          <p className="text-text-secondary text-sm mt-1">Pakistan's Premier Trading Platform</p>
+          <p className="text-text-secondary text-sm mt-1">Pakistans Premier Trading Platform</p>
         </div>
         {children}
       </div>

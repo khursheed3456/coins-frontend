@@ -55,7 +55,7 @@ export default function ForgotPasswordPage() {
         <ArrowLeft size={15} /> Back to login
       </Link>
       <h2 className="font-display text-xl font-semibold text-text-primary mb-2">Forgot Password</h2>
-      <p className="text-text-secondary text-sm mb-5">Enter your email and we'll send you a reset code.</p>
+      <p className="text-text-secondary text-sm mb-5">Enter your email and well send you a reset code.</p>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
