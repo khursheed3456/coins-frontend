@@ -100,6 +100,7 @@ export default function CoinDetailPage() {
       <div className="flex items-start justify-between gap-4 mb-5">
         <div className="flex items-center gap-3">
           {coin.imageUrl
+            // eslint-disable-next-line @next/next/no-img-element
             ? <img src={coin.imageUrl} alt={coin.symbol} className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover" />
             : <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-cyan/10 border border-cyan/20 flex items-center justify-center flex-shrink-0"><span className="text-cyan text-lg font-bold">{coin.symbol[0]}</span></div>
           }

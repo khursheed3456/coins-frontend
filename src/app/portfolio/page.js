@@ -87,6 +87,7 @@ export default function PortfolioPage() {
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
                     {h.coin.imageUrl
+                      // eslint-disable-next-line @next/next/no-img-element
                       ? <img src={h.coin.imageUrl} alt={h.coin.symbol} className="w-7 h-7 rounded-full" />
                       : <div className="w-7 h-7 rounded-full bg-cyan/10 border border-cyan/20 flex items-center justify-center"><span className="text-cyan text-xs font-bold">{h.coin.symbol[0]}</span></div>
                     }
@@ -125,6 +126,7 @@ export default function PortfolioPage() {
                   <tr key={h.id} className="border-b border-bg-border/40 hover:bg-bg-elevated/20 transition-colors">
                     <td className="py-3 pr-4">
                       <div className="flex items-center gap-2">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         {h.coin.imageUrl ? <img src={h.coin.imageUrl} alt={h.coin.symbol} className="w-7 h-7 rounded-full" />
                           : <div className="w-7 h-7 rounded-full bg-cyan/10 border border-cyan/20 flex items-center justify-center"><span className="text-cyan text-xs font-bold">{h.coin.symbol[0]}</span></div>}
                         <span className="text-text-primary text-sm font-medium">{h.coin.name}</span>

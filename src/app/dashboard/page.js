@@ -133,6 +133,7 @@ export default function DashboardPage() {
                     <td className="py-3 pr-4">
                       <div className="flex items-center gap-2">
                         {coin.imageUrl
+                          // eslint-disable-next-line @next/next/no-img-element
                           ? <img src={coin.imageUrl} alt={coin.symbol} className="w-7 h-7 rounded-full object-cover" />
                           : <div className="w-7 h-7 rounded-full bg-cyan/10 border border-cyan/20 flex items-center justify-center flex-shrink-0"><span className="text-cyan text-xs font-bold">{coin.symbol[0]}</span></div>
                         }

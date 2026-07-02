@@ -127,6 +127,7 @@ export default function AdminCoinsPage() {
             <div key={coin.id} className="card">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   {coin.imageUrl ? <img src={coin.imageUrl} alt={coin.symbol} className="w-8 h-8 rounded-full" />
                     : <div className="w-8 h-8 rounded-full bg-cyan/10 border border-cyan/20 flex items-center justify-center"><span className="text-cyan text-sm font-bold">{coin.symbol[0]}</span></div>}
                   <div>
@@ -171,6 +172,7 @@ export default function AdminCoinsPage() {
                       <tr key={coin.id} className="border-b border-bg-border/40 hover:bg-bg-elevated/20 transition-colors">
                         <td className="py-3 pr-4">
                           <div className="flex items-center gap-2">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
                             {coin.imageUrl ? <img src={coin.imageUrl} alt={coin.symbol} className="w-6 h-6 rounded-full" />
                               : <div className="w-6 h-6 rounded-full bg-cyan/10 border border-cyan/20 flex items-center justify-center"><span className="text-cyan text-xs font-bold">{coin.symbol[0]}</span></div>}
                             <span className="text-text-primary text-sm">{coin.name}</span>

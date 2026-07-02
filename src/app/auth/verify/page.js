@@ -1,11 +1,24 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { CheckCircle, XCircle, Loader } from 'lucide-react';
 import api from '../../../lib/api';
 import Link from 'next/link';
 
 export default function VerifyPage() {
+  return (
+    <Suspense fallback={
+      <div className="card text-center animate-slide-up">
+        <Loader size={48} className="text-cyan mx-auto mb-4 animate-spin" />
+        <p className="text-text-secondary">Verifying your email...</p>
+      </div>
+    }>
+      <VerifyPageInner />
+    </Suspense>
+  );
+}
+
+function VerifyPageInner() {
   const params = useSearchParams();
   const router = useRouter();
   const [status, setStatus] = useState('loading');

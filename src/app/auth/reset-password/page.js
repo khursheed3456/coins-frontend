@@ -1,11 +1,19 @@
 'use client';
-import { useState, useRef, useEffect } from 'react';
+import { Suspense, useState, useRef, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Eye, EyeOff, KeyRound } from 'lucide-react';
 import toast from 'react-hot-toast';
 import api from '../../../lib/api';
 
 export default function ResetPasswordPage() {
+  return (
+    <Suspense fallback={null}>
+      <ResetPasswordPageInner />
+    </Suspense>
+  );
+}
+
+function ResetPasswordPageInner() {
   const router = useRouter();
   const params = useSearchParams();
   const email = params.get('email') || '';

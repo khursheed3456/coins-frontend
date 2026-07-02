@@ -67,6 +67,7 @@ export default function CoinsPage() {
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-3 min-w-0">
                     {coin.imageUrl
+                      // eslint-disable-next-line @next/next/no-img-element
                       ? <img src={coin.imageUrl} alt={coin.symbol} className="w-9 h-9 rounded-full object-cover flex-shrink-0" />
                       : <div className="w-9 h-9 rounded-full bg-cyan/10 border border-cyan/20 flex items-center justify-center flex-shrink-0"><span className="text-cyan font-bold text-sm">{coin.symbol[0]}</span></div>
                     }

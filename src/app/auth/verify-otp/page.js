@@ -1,11 +1,19 @@
 'use client';
-import { useState, useRef, useEffect } from 'react';
+import { Suspense, useState, useRef, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { ShieldCheck, RefreshCw } from 'lucide-react';
 import toast from 'react-hot-toast';
 import api from '../../../lib/api';
 
 export default function VerifyOTPPage() {
+  return (
+    <Suspense fallback={null}>
+      <VerifyOTPPageInner />
+    </Suspense>
+  );
+}
+
+function VerifyOTPPageInner() {
   const router = useRouter();
   const params = useSearchParams();
   const email = params.get('email') || '';
