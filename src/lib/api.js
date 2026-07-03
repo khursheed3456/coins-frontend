@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
-
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+console.log(API_URL)
 const api = axios.create({
   baseURL: `${API_URL}/api`,
   headers: { 'Content-Type': 'application/json' },
-  timeout: 10000,
+  timeout: 100000,
 });
 
 // Attach token on every request
